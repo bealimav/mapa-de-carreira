@@ -117,16 +117,120 @@
   .tech-item .tech-name{ font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:600; color:var(--ink); margin-bottom:4px; }
   .tech-item .tech-desc{ font-size:12px; color:var(--ink-dim); line-height:1.45; }
 
-  .vision{ background:linear-gradient(135deg, var(--dados-soft), var(--idiomas-soft) 50%, var(--money-soft) 100%); border:1px solid var(--hairline); border-radius:20px; padding:44px 40px; text-align:left; }
+  .vision{ background:linear-gradient(135deg, var(--dados-soft), var(--idiomas-soft) 50%, var(--money-soft) 100%); border:1px solid var(--hairline); border-radius:20px; padding:44px 40px; text-align:left; margin-bottom:64px; }
   .vision .eyebrow{ margin-bottom:16px; }
   .vision p{ font-family:'Space Grotesk', sans-serif; font-size:clamp(20px, 2.6vw, 28px); font-weight:500; line-height:1.4; max-width:820px; }
   .vision p b{ font-weight:700; }
 
+  /* ===== SEÇÃO: ESTABILIDADE & SONHO ===== */
+  .life-goal{
+    background:var(--panel);
+    border:1px solid var(--hairline);
+    border-radius:20px;
+    padding:44px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  .life-goal::before{
+    content:'';
+    position:absolute; top:0; left:0; right:0; height:4px;
+    background:linear-gradient(90deg, var(--dados), var(--money-light), var(--idiomas));
+  }
+  .life-goal .eyebrow{ margin-bottom:14px; }
+  .life-goal h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:clamp(22px, 3vw, 30px);
+    line-height:1.2;
+    margin-bottom:10px;
+    max-width:720px;
+  }
+  .life-goal h2 span{ color: var(--money-light); }
+  .life-goal .lead{
+    font-size:15.5px;
+    color:var(--ink-dim);
+    line-height:1.6;
+    max-width:680px;
+    margin-bottom:36px;
+  }
+  .goal-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  .goal-card{
+    background:var(--bg-alt);
+    border:1px solid var(--hairline);
+    border-radius:16px;
+    padding:28px 26px;
+    position:relative;
+  }
+  .goal-card.pro{
+    border-left:3px solid var(--dados);
+  }
+  .goal-card.dream{
+    border-left:3px solid var(--money-light);
+  }
+  .goal-card .goal-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    margin-bottom:12px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .goal-card.pro .goal-tag{ color: var(--dados); }
+  .goal-card.dream .goal-tag{ color: var(--money-light); }
+  .goal-card .goal-tag .dot{
+    width:6px; height:6px; border-radius:50%;
+    background: currentColor;
+    box-shadow:0 0 8px currentColor;
+  }
+  .goal-card h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:19px;
+    font-weight:600;
+    margin-bottom:14px;
+    line-height:1.3;
+  }
+  .goal-card p{
+    font-size:13.5px;
+    color:var(--ink-dim);
+    line-height:1.6;
+    margin-bottom:10px;
+  }
+  .goal-card p:last-child{ margin-bottom:0; }
+  .goal-card p b{ color: var(--ink); font-weight:600; }
+  .goal-card ul{
+    list-style:none;
+    display:flex; flex-direction:column; gap:10px;
+    margin-top:14px;
+  }
+  .goal-card li{
+    font-size:13px;
+    line-height:1.5;
+    color:var(--ink-dim);
+    padding-left:16px;
+    position:relative;
+  }
+  .goal-card.pro li::before{
+    content:""; position:absolute; left:0; top:7px;
+    width:6px; height:6px; border-radius:50%;
+    background: var(--dados); opacity:0.85;
+  }
+  .goal-card.dream li::before{
+    content:""; position:absolute; left:0; top:7px;
+    width:6px; height:6px; border-radius:50%;
+    background: var(--money-light); opacity:0.85;
+  }
+
   @media (max-width:900px){
     .tracks{ grid-template-columns:1fr; }
     .tech-grid{ grid-template-columns:1fr 1fr; }
+    .goal-grid{ grid-template-columns:1fr; }
     body{ padding:44px 16px 80px; }
     .vision{ padding:32px 24px; }
+    .life-goal{ padding:32px 24px; }
     .rung{ grid-template-columns:24px 1fr; }
     .status{ grid-column:1 / -1; justify-self:start; margin-top:4px; }
   }
@@ -434,6 +538,38 @@
   <section class="vision">
     <div class="eyebrow"><span class="dot" style="background:var(--money-light); box-shadow:0 0 8px var(--money-light);"></span>Visão de longo prazo</div>
     <p>Estabilizar no mercado corporativo com uma cadeira sólida em <b>Engenharia de Dados</b>, escalar a <b>Active Money</b> como marca de referência em educação financeira, falar inglês de nível corporativo com <b>Cambridge</b> — e, um dia, abrir a própria <b>cafeteria</b>.</p>
+  </section>
+
+  <section class="life-goal">
+    <div class="eyebrow"><span class="dot" style="background:var(--money-light); box-shadow:0 0 8px var(--money-light);"></span>Estabilidade & sonho de vida</div>
+    <h2>Carreira estável, vida construída — e um dia, uma <span>cafeteria própria</span>.</h2>
+    <p class="lead">Duas metas caminham juntas: a estabilidade profissional que sustenta a vida, e o sonho que dá direção a ela.</p>
+
+    <div class="goal-grid">
+
+      <div class="goal-card pro">
+        <div class="goal-tag"><span class="dot"></span>Estabilidade profissional</div>
+        <h3>Uma cadeira sólida em Engenharia de Dados</h3>
+        <p>Quero me estabilizar no mercado corporativo com <b>segurança técnica e financeira</b>, crescendo na área de Dados com maturidade e consistência.</p>
+        <ul>
+          <li>Efetivação como <b>Engenheira de Dados Jr</b></li>
+          <li>Consolidação técnica e certificações reconhecidas</li>
+          <li>Equilíbrio entre carreira corporativa e projetos próprios</li>
+        </ul>
+      </div>
+
+      <div class="goal-card dream">
+        <div class="goal-tag"><span class="dot"></span>Sonho de vida</div>
+        <h3>Abrir a própria cafeteria</h3>
+        <p>Um espaço com identidade, atendimento acolhedor e produto bem feito — construído com <b>planejamento, pesquisa e recursos da carreira</b>.</p>
+        <ul>
+          <li>Conceito autoral e curadoria de produtos</li>
+          <li>Estudo de mercado, ponto e operação</li>
+          <li>Viabilizado com base na estabilidade financeira</li>
+        </ul>
+      </div>
+
+    </div>
   </section>
 
 </div>
